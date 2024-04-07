@@ -59,7 +59,7 @@ export default function GuestDetails(props) {
         //     setDisplay("Invalid Vehicle Number");
         //     setLoader(false);
         // }
-        const response = await axios.get(`http://${window.location.hostname}:4000/guestDet`, {
+        const response = await axios.get(`https://toh-deploy.vercel.app/guestDet`, {
             params: {
                 vehicleNumber: vno,
             },
