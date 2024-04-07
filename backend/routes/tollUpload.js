@@ -11,7 +11,7 @@ router.use(cookieparser());
 require('dotenv').config();
 // ^ CORS 
 router.use(cors({
-    origin: 'https://toh-deploy-front.vercel.app/',
+    origin: 'https://toh-deploy-front.vercel.app',
     credentials: true,
 }));
 

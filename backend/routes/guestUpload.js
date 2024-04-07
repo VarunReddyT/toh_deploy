@@ -5,7 +5,7 @@ const blobUtil = require('blob-util');
 const axios = require('axios');
 const cors = require('cors');
 router.use(cors({
-  origin: 'https://toh-deploy-front.vercel.app/',
+  origin: 'https://toh-deploy-front.vercel.app',
   credentials: true,
 }));
 // & Multer config for GuestUpload

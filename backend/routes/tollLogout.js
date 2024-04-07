@@ -6,7 +6,7 @@ const auth = require('../middleware/tollAuth');
 
 // ^ CORS 
 router.use(cors({
-    origin: 'https://toh-deploy-front.vercel.app/',
+    origin: 'https://toh-deploy-front.vercel.app',
     credentials: true,
 }));
 
