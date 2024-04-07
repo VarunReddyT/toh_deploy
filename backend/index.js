@@ -8,7 +8,6 @@ const TollPlaza = require('../models/TollPlazaSch');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
 require('dotenv').config();
 
 // ^ defining port
@@ -16,7 +15,7 @@ const port = 4000;
 
 // ^ CORS 
 app.use(cors({
-  origin: 'https://toh-deploy-front.vercel.app/',
+  origin: 'https://toh-deploy-front.vercel.app',
   methods: ['GET', 'POST'],
   credentials: true,
 }));
