@@ -60,7 +60,7 @@ export default function GuestUpload(props) {
             async function makeReq(formData) {
                 try {
                     console.log("formData", formData.getAll('GuestUploadImage0'));
-                    const response = await axios.post(`http://${window.location.hostname}:4000/guestUp`, formData)
+                    const response = await axios.post(`https://toh-deploy.vercel.app/guestUp`, formData)
                     console.log(response.data[0]);
                     setLoader(false);
                     setRes(true);
