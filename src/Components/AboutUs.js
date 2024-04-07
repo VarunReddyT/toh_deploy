@@ -24,7 +24,7 @@ export default function AboutUs(props) {
   };
 
     try{
-        const response = await axios.post('http://localhost:4000/feedback', sendData);
+        const response = await axios.post('https://toh-deploy.vercel.app/feedback', sendData);
         if(response){
           document.getElementById('feedbackF').reset(); 
         }
