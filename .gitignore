@@ -24,6 +24,6 @@ yarn-error.log*
 
 /backend/node_modules
 /backend/best_model.h5
-/backend/best_model.keras
+# /backend/best_model.keras
 /backend/.env
 /Tires_On_Highways.pptx
