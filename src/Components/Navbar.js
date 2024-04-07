@@ -29,7 +29,7 @@ export default function Navbar({ signInButton }) {
   }
   async function handleCloseModal() {
     setModal(false);
-    const response = await axios.get(`http://${window.location.hostname}:4000/logout`, { withCredentials: true })
+    const response = await axios.get(`https://toh-deploy.vercel.app/logout`, { withCredentials: true })
     console.log(response);
     navigate('/');
   }
