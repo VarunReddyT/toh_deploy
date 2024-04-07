@@ -7,7 +7,7 @@ const FeedbackData = require('../models/FeedbackSch');
 
 router.use(bodyParser.json());
 router.use(cors({
-    origin: 'https://toh-deploy-back.vercel.app/',
+    origin: 'https://toh-deploy-front.vercel.app/',
     credentials: true,
 }));
 

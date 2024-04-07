@@ -4,7 +4,7 @@ const router = require('express').Router();
 router.use(cookieparser());
 const cors = require('cors');
 router.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://toh-deploy-front.vercel.app/',
     credentials: true,
 }));
 const auth = async (req, res, next) => {

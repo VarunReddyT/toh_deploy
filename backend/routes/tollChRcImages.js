@@ -5,7 +5,7 @@ const auth = require('../middleware/tollAuth');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 router.use(cors({
-    origin: 'https://toh-deploy-back.vercel.app/',
+    origin: 'https://toh-deploy-front.vercel.app/',
     credentials: true,
 }));
 router.use(cookieParser());
