@@ -19,7 +19,7 @@ const port = 4000;
 
 // ^ CORS 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://toh-deploy-back.vercel.app/',
   methods: ['GET', 'POST'],
   credentials: true,
 }));

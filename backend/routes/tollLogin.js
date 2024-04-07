@@ -10,7 +10,7 @@ const cors = require('cors');
 
 // ^ CORS 
 router.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://toh-deploy-back.vercel.app/',
     credentials: true,
   }));
 

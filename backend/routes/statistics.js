@@ -3,7 +3,7 @@ const router = express.Router();
 const TollData = require('../models/TollDataSch');
 const cors = require('cors');
 router.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://toh-deploy-back.vercel.app/',
     credentials: true,
 }));
 

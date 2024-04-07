@@ -3,7 +3,11 @@ const router = express.Router();
 const multer = require('multer');
 const blobUtil = require('blob-util');
 const axios = require('axios');
-
+const cors = require('cors');
+router.use(cors({
+  origin: 'https://toh-deploy-back.vercel.app/',
+  credentials: true,
+}));
 // & Multer config for GuestUpload
 const GuestUp = multer.memoryStorage();
 const Guestupload = multer({ storage: GuestUp, limits: { fieldSize: 25 * 1024 * 1024 } })
