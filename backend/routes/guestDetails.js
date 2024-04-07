@@ -4,6 +4,7 @@ const cors = require('cors');
 const TollData = require('../models/TollDataSch');
 router.use(cors({
     origin: 'https://toh-deploy-front.vercel.app',
+    methods: ['GET', 'POST'],
     credentials: true,
 }));
 

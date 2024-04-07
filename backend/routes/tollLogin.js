@@ -4,7 +4,7 @@ const multer = require('multer');
 const TollPlaza = require('../models/TollPlazaSch');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
 
@@ -14,15 +14,15 @@ router.use(cors({
     credentials: true,
   }));
 
-router.use(cookieParser());
+// router.use(cookieParser());
 
 // & Multer config for TollUpload
 const TollUp = multer.memoryStorage();
 const Tollupload = multer({ storage: TollUp, limits: { fieldSize: 25 * 1024 * 1024 } })
 
 // & JWT
-const createToken = (id) => {
-    return jwt.sign({ id }, 'TiresOnHighway', { expiresIn: 60 * 60 * 1000 });}
+// const createToken = (id) => {
+//     return jwt.sign({ id }, 'TiresOnHighway', { expiresIn: 60 * 60 * 1000 });}
 
 // ! Login Route
 router.post('/login', Tollupload.any(), async (req, res) => {
