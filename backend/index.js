@@ -34,7 +34,11 @@ mongoose.connect(process.env.MONGO_URI)
 // ^ Express config for parsing request body as JSON
 app.use(express.urlencoded({ extended: true }));  
 app.use(router);
-app.use(express.static("build"));
+// app.use(express.static("build"));
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
 router.get('/guestDet' ,guestDetails);
 router.post('/guestUp', guestUpload);
