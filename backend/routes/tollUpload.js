@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const TollData = require('../models/TollDataSch');
-const auth = require('../middleware/tollAuth');
+// const auth = require('../middleware/tollAuth');
 const cors = require('cors');
 const axios = require('axios');
 const blobUtil = require('blob-util');
-const cookieparser = require('cookie-parser')
-router.use(cookieparser());
+// const cookieparser = require('cookie-parser')
+// router.use(cookieparser());
 require('dotenv').config();
 // ^ CORS 
 router.use(cors({
@@ -21,7 +21,7 @@ const Tollupload = multer({ storage: TollUp, limits: { fieldSize: 25 * 1024 * 10
 
 
 //! TollUpload Route
-router.post('/tollupload',auth,Tollupload.any(), async (req, res) => {
+router.post('/tollupload',Tollupload.any(), async (req, res) => {
     console.log("TollUpload Route");
 
     let msg ='';
