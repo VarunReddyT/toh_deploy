@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const TollPlaza = require('../models/TollPlazaSch');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 // const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
@@ -11,6 +11,7 @@ const cors = require('cors');
 // ^ CORS 
 router.use(cors({
     origin: 'https://toh-deploy-front.vercel.app',
+    methods: ['POST', 'GET'],
     credentials: true,
   }));
 
