@@ -51,7 +51,7 @@ export default function TollLogin({ setSelectedToll, setSignInButton, setCookie 
         const response = await axios.post(`https://toh-deploy-back.vercel.app/login`, formData, { withCredentials: true });
         console.log(response);
         if (response.data === "Success") {
-          setCookie(document.cookie);
+          // setCookie(document.cookie);
           setSelectedToll(toll);
           setLoader(false);
           navigate('/toll/start');

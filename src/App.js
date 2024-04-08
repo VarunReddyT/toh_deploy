@@ -32,7 +32,7 @@ const NotFound = (props) => (
 function App() {
   const [selectedToll, setSelectedToll] = useState('');
   const [signInButton, setSignInButton] = useState(true);
-  const [cookie, setCookie] = useState(document.cookie);
+  // const [cookie, setCookie] = useState(document.cookie);
   
 
   useEffect(() => {
@@ -50,27 +50,26 @@ function App() {
     <>
       <div className="app-container">
         <Router>
-          <Navbar signInButton={signInButton} setCookie={setCookie} />
+          <Navbar signInButton={signInButton} />
           <Routes>
             <Route path='/' element={<Home setSignInButton={setSignInButton} />} />
             <Route path='/loader' element={<Loader />} />
             <Route path='/aboutus' element={<AboutUs setSignInButton={setSignInButton} />} />
-            <Route path='/toll' element={<TollLogin setCookie={setCookie} selectedToll={selectedToll} setSelectedToll={setSelectedToll} setSignInButton={setSignInButton} />} />
-            {!cookie &&
+            <Route path='/toll' element={<TollLogin selectedToll={selectedToll} setSelectedToll={setSelectedToll} setSignInButton={setSignInButton} />} />
+            {/* {!cookie &&
               <>
                 <Route path='/toll/start' element={<NoAccess />} />
                 <Route path='/toll/upload' element={<NoAccess />} />
                 <Route path='/toll/checkrecords' element={<NoAccess />} />
               </>
-            }
+            } */}
 
-            {cookie &&
-              <>
+           
                 <Route path='/toll/start' element={<TollStart selectedToll={selectedToll} setSignInButton={setSignInButton} />} />
                 <Route path='/toll/upload' element={<TollUpload selectedToll={selectedToll} setSignInButton={setSignInButton} />} />
                 <Route path='/toll/checkrecords' element={<CheckRecords selectedToll={selectedToll} setSignInButton={setSignInButton} />} />
-              </>
-            }
+            
+            
 
 
             <Route path='/stats' element={<Statistics setSignInButton={setSignInButton} />} />
