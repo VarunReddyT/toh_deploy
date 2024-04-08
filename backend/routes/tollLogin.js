@@ -31,40 +31,41 @@ router.post('/login', Tollupload.any(), async (req, res) => {
     try {
       const user = await TollPlaza.findOne({ username: toll });
       console.log(user);
-      if(user){
-        res.send("Success");
+      // if(user){
+      //   res.send("Success");
+      // }
+      // else{
+      //   res.send("Not Allowed");
+      // }
+      if (user) {
+        try {
+          const passMatch = await bcrypt.compare(password, user.password);
+          if (passMatch) {
+            console.log("Password Matched");
+            res.send("Success");
+            // try {
+            //   const token = createToken(user._id);
+            //   // console.log(token);
+            //   res.cookie('tollLogin', token, {  maxAge: 60 * 60 * 1000 });
+            //   // sameSite: 'None'  -> for CORS purposes and controlling the cookie to be sent only to the same origin
+            //   // secure : true -> is not recommended for development purposes as we can't access a cookie using document.cookie in the client side 
+            //   // path: '/' -> to make the cookie available to all the routes
+            //   // domain: `http://${req.hostname}:3000`} -> to make the cookie available to all the subdomains
+            //   console.log("Success");
+            //   res.send("Success");
+            // } catch (err) {
+            //   console.log(err);
+            // }
+          }
+          else {
+            console.log("Not Allowed");
+            res.send("Not Allowed");
+          }
+        }
+        catch (err) {
+          console.log(err);
+        }
       }
-      else{
-        res.send("Not Allowed");
-      }
-    //   if (user) {
-    //     try {
-    //       const passMatch = await bcrypt.compare(password, user.password);
-    //       if (passMatch) {
-    //         console.log("Password Matched");
-    //         try {
-    //           const token = createToken(user._id);
-    //           // console.log(token);
-    //           res.cookie('tollLogin', token, {  maxAge: 60 * 60 * 1000 });
-    //           // sameSite: 'None'  -> for CORS purposes and controlling the cookie to be sent only to the same origin
-    //           // secure : true -> is not recommended for development purposes as we can't access a cookie using document.cookie in the client side 
-    //           // path: '/' -> to make the cookie available to all the routes
-    //           // domain: `http://${req.hostname}:3000`} -> to make the cookie available to all the subdomains
-    //           console.log("Success");
-    //           res.send("Success");
-    //         } catch (err) {
-    //           console.log(err);
-    //         }
-    //       }
-    //       else {
-    //         console.log("Not Allowed");
-    //         res.send("Not Allowed");
-    //       }
-    //     }
-    //     catch (err) {
-    //       console.log(err);
-    //     }
-    //   }
     }
     catch (err) {
       console.log(err);
