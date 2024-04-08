@@ -44,7 +44,7 @@ router.post('/tollupload',auth,Tollupload.any(), async (req, res) => {
     const tollFlaskResponse = [];
     try {
         console.log("Sending file to flask api. . . ");
-        const tollResponse_flask = await axios.post('http://127.0.0.1:5000/classify', tollFlaskRequestData)
+        const tollResponse_flask = await axios.post('https://finalflask.el.r.appspot.com/classify', tollFlaskRequestData)
         for (let i = 0; i < files.length; i++) {
             tollFlaskResponse.push(tollResponse_flask.data[i]);
         }
