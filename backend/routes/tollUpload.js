@@ -12,6 +12,7 @@ require('dotenv').config();
 // ^ CORS 
 router.use(cors({
     origin: 'https://toh-deploy-front.vercel.app',
+    methods: ['POST', 'GET'],
     credentials: true,
 }));
 
